@@ -1,0 +1,30 @@
+<h1>Create a new restaurant</h1>
+
+<%= simple_form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- [...] all the fields -->
+  <%= form_for(@restaurant) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+
+   <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<% end %>
+

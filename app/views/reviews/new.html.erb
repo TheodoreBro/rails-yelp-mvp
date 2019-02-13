@@ -1,0 +1,24 @@
+<h1>new Review</h1>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <% if @review.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- [...] all the fields -->
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+   <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+<% end %>
